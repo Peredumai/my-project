@@ -1,0 +1,97 @@
+@import 'src/styles/main';
+
+.btn {
+  cursor: pointer;
+  flex-shrink: 0;
+  height: 40px;
+  min-height: 40px;
+  min-width: 136px;
+  user-select: none;
+  border-radius: 12px;
+  padding: 9px 0;
+  border: 0;
+  transition: all .3s;
+  @extend %button;
+
+  &:disabled,
+  &:disabled:hover {
+    cursor: default;
+  }
+}
+
+.small, .medium, .large, .extraLarge {
+  height: 54px; 
+  padding: 16px 0; 
+  border-radius: 16px;
+}
+
+.small {
+  width: 147px;
+}  
+
+.medium {
+  width: 207px;
+}  
+
+.large {
+  width: 243px;
+}  
+
+.extraLarge {
+  width: 296px;
+}  
+
+.block {
+
+}
+
+.blue {
+  background-color: $blue;
+  color: $white;
+
+  &:hover {
+    border: 1px solid $blue;
+    background-color: $white;
+    color: $black-2;
+  }
+
+  &:active {
+    background-color: #4B84FD;
+    color: $white;
+    border: 0;
+  }
+}
+
+.white {
+  background-color: $white;
+  color: $black-2;
+
+  &:hover {
+    border: 1px solid $white;
+    color: $white;
+    background-color: $blue;
+  }
+
+  &:active {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: $black-2;
+    border: 0;
+  }
+}
+
+.grey {
+  background-color: $black-1;
+  color: $white;
+
+  &:hover {
+    border: 1px solid #000000;
+    color: $black-2;
+    background-color: $white;
+  }
+
+  &:active {
+    background-color: #606060;
+    color: $white;
+    border: 0;
+  }
+}
