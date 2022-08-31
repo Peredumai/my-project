@@ -1,0 +1,25 @@
+@use 'variables';
+
+@mixin mobile-480 {
+    @media (max-width: #{variables.$breakpoint480}px) {
+        @content;
+    }
+}
+// breakpoints cascading
+@mixin tablet-portrait-768 {
+    @media (max-width: #{variables.$breakpoint768}px) {
+        @content;
+    }
+}
+
+@mixin tablet-landscape-960 {
+    @media (max-width: #{variables.$breakpoint960}px) {
+        @content;
+    }
+}
+
+@mixin desktop-1280 {
+    @media (max-width: #{variables.$breakpoint1280}px) {
+        @content;
+    }
+}

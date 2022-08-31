@@ -1,0 +1,31 @@
+@import 'mixins';
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Inter:wght@400;500;600&family=Manrope:wght@600&family=Montserrat:wght@400;500;600;700&display=swap');
+
+// GothamPro
+@include font-face(GothamPro, '../assets/fonts/GothamPro', null, null, woff2 woff);
+@include font-face(GothamPro-Medium, '../assets/fonts/GothamPro-Medium', null, null, woff2 woff);
+@include font-face(GothamPro-Light, '../assets/fonts/GothamPro-Light', null, null, woff2 woff);
+@include font-face(GothamPro-Bold, '../assets/fonts/GothamPro-Bold', null, null, woff2 woff);
+@include font-face(GothamPro-Black, '../assets/fonts/GothamPro-Black', null, null, woff2 woff);
+
+//SF Compact Display
+@include font-face(
+    SF-Compact-Display,
+    '../assets/fonts/SF-Compact-Display',
+    null,
+    null,
+    woff2 woff
+);
+
+$gotham-pro-regular: 'GothamPro', sans-serif; 
+$gotham-pro-medium: 'GothamPro-Medium', sans-serif; 
+$gotham-pro-light: 'GothamPro-Light', sans-serif;
+$gotham-pro-bold: 'GothamPro-Bold', sans-serif; 
+$gotham-pro-black: 'GothamPro-Black', sans-serif;
+
+$sf-compact-display: 'SF-Compact-Display', sans-serif;
+
+$ibm-plex-sans: 'IBM Plex Sans', sans-serif;
+$inter: 'Inter', sans-serif;
+$manrope: 'Manrope', sans-serif;
+$montserrat: 'Montserrat', sans-serif;

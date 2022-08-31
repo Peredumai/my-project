@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './app/root/app';
 
+import './styles/index.scss';
+
 import 'normalize.css/normalize.css';
 
 const root = ReactDOM.createRoot(

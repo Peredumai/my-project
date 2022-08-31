@@ -1,0 +1,59 @@
+@mixin typography(
+    $font-family,
+    $font-size,
+    $line-height,
+    $font-weight,
+    $font-size-m,
+    $line-height-m,
+    $font-weight-m,
+) {
+    letter-spacing: 0.01em;
+    font-style: normal;
+    font-family: $font-family;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    line-height: $line-height;	
+    @include tablet-portrait-768 {
+        font-size: $font-size-m;
+        font-weight: $font-weight-m;
+        line-height: $line-height-m;
+    }
+}
+
+@mixin typography-regular(
+    $font-family,
+    $font-weight,
+) {
+    font-style: normal;
+    font-family: $font-family;
+    font-size: 36px;
+    font-weight: $font-weight;
+    line-height: 100%;	
+}
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+    $src: null;
+
+    $extmods: (
+        eot: '?',
+        svg: '#' + str-replace($name, ' ', '_'),
+    );
+
+    $formats: (
+        otf: 'opentype',
+        ttf: 'truetype',
+    );
+
+    @each $ext in $exts {
+        $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+        $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+        $src: append($src, url(quote($path + '.' + $extmod)) format(quote($format)), comma);
+    }
+
+    @font-face {
+        font-family: quote($name);
+        font-style: $style;
+        font-weight: $weight;
+        src: $src;
+    }
+}

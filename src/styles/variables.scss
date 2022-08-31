@@ -1,0 +1,14 @@
+@use 'fonts';
+
+// Breakpoints
+$breakpoint480: 480;
+// mobile <
+$breakpoint768: 768;
+// >= tablet-portrait <
+$breakpoint960: 960;
+// >= tablet-landscape <
+$breakpoint1280: 1280;
+// >= desktop
+
+$main-font: fonts.$gotham-pro-regular;
+$base-font-size: 42;

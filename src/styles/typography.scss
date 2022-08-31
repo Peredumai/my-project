@@ -1,0 +1,58 @@
+@use 'fonts';
+@use 'variables';
+
+%heading-1 {
+  @include typography(variables.$main-font, 36px, 140%, 700, 30px, 140%, 700);
+}
+
+%heading-2 {
+  @include typography(variables.$main-font, 32px, 140%, 700, 25px, 140%, 700);
+}
+
+%heading-3 {
+  @include typography(variables.$main-font, 26px, 140%, 400, 22px, 140%, 700);
+}
+
+%heading-4 {
+  @include typography(variables.$main-font, 22px, 140%, 700, 19px, 140%, 700);
+}
+
+%heading-5 {
+  @include typography(variables.$main-font, 20px, 140%, 400, 18px, 140%, 700);
+}
+
+%button {
+  @include typography(variables.$main-font, 17px, 130%, 700, 15px, 130%, 700);
+}
+
+%paragraph-blog {
+  @include typography(variables.$main-font, 18px, 150%, 400, 15px, 130%, 700);
+}
+
+%paragraph {
+  @include typography(variables.$main-font, 16px, 150%, 400, 16px, 150%, 400);
+}
+
+%label-1 {
+  @include typography(fonts.$gotham-pro-black, 15px, 130%, 400, 15px, 130%, 400);
+}
+
+%label-2 {
+  @include typography(fonts.$gotham-pro-black, 14px, 130%, 400, 14px, 130%, 400);
+}
+
+%black {
+  @include typography-regular(fonts.$gotham-pro-black, 400);
+}
+
+%bold {
+  @include typography-regular(fonts.$gotham-pro-bold, 700);
+}
+
+%medium {
+  @include typography-regular(fonts.$gotham-pro-medium, 400);
+}
+
+%regular {
+  @include typography-regular(variables.$main-font, 400);
+}
