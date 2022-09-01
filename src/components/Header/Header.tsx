@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import styles from './Header.module.scss'
 
+import { Link, NavLink } from 'react-router-dom'
+
 import Logo from '../../assets/img/logo.svg'
 import ArrowDown from '../../assets/img/arrow-down.svg'
 import Whatsapp from '../../assets/img/whatsapp.svg'
@@ -37,7 +39,12 @@ const Header = () => {
 
     return (
         <header>
-            <div onClick={overlayFunc} className={clsx(styles.overlay, { [styles.overlay_active]: subscriptionsMenuVisible || langMenuVisible })} />
+            <div
+                onClick={overlayFunc}
+                className={clsx(styles.overlay, {
+                    [styles.overlay_active]: subscriptionsMenuVisible || langMenuVisible,
+                })}
+            />
             {menuActive && (
                 <MobileMenu
                     overlayFunc={overlayFunc}
@@ -48,10 +55,10 @@ const Header = () => {
 
             <div className={styles.container}>
                 <div className={styles.header__content}>
-                    <div className={styles.header__logo}>
+                    <Link to='/' className={styles.header__logo}>
                         <img src={Logo} alt='logo' />
                         <span>DiscountsOnServices</span>
-                    </div>
+                    </Link>
                     <ul className={clsx(styles.menu)}>
                         <li onClick={subscriptionsToggleHandler}>
                             <span>Subscriptions</span>
@@ -71,7 +78,11 @@ const Header = () => {
                                 </div>
                             )}
                         </li>
-                        <li>FAQ</li>
+                        <li>
+                            <NavLink to='/faq'>
+                                FAQ
+                            </NavLink>
+                        </li>
                         <li>Support</li>
                         <li>About</li>
                     </ul>

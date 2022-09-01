@@ -85,11 +85,11 @@
           max-width: 450px;
           flex: 0 1 100%;
           margin: 0 auto;
+          font-family: $gotham-pro-bold;
+          font-size: 15px;
+          letter-spacing: 0.01em;
       }
       > .header__mobile__login {
-          border: 1px solid $blue; //refactor
-          background: transparent; //refactor
-          color: $blue; //refactor
           margin-bottom: 8px;
           margin-top: 67px;
       }

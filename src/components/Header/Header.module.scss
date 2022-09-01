@@ -19,7 +19,7 @@ header {
         gap: 20px;
     }
     @include tablet-landscape-960 {
-        height: 54px;
+        height: $headerHeightMobile;
     }
 }
 

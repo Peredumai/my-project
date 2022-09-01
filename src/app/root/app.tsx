@@ -1,12 +1,18 @@
 import React from 'react'
-import Header from '../../components/Header/Header'
-import styles from './App.module.scss'
+import Layout from '../../components/Layout/Layout'
+import { Routes, Route } from 'react-router-dom'
+import HomePage from '../../pages/HomePage/HomePage'
+import FAQPage from '../../pages/FAQPage/FAQPage'
 
 function App() {
-    return <div className={styles.app}>
-        <Header />
-        <div className={styles.cont}></div>
-    </div>
+    return (
+        <Layout>
+            <Routes>
+                <Route path='/' element={<HomePage />} />
+                <Route path='/faq' element={<FAQPage />} />
+            </Routes>
+        </Layout>
+    )
 }
 
 export default App

@@ -9,3 +9,10 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
+
+a {
+    all: unset;
+    &.active {
+        color: $blue;
+    }
+}

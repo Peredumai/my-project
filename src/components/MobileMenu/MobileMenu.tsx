@@ -80,7 +80,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ langMenuVisible, langToggleHand
                             )}
                         </div>
                         <Button className={styles.header__mobile__signup}>Sign up</Button>
-                        <Button className={styles.header__mobile__login}>Login</Button>
+                        <Button className={styles.header__mobile__login} color='outline'>Login</Button>
                     </div>
                 </div>
             </div>

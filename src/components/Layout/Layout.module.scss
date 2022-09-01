@@ -1,0 +1,9 @@
+@import 'src/styles/main';
+
+.layout {
+    background: $bg;  
+    padding-top: $headerHeight;
+    @include tablet-landscape-960 {
+      padding-top: $headerHeightMobile;
+    }
+}
