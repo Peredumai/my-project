@@ -25,6 +25,10 @@
   border-radius: 16px;
 }
 
+.none {
+  width: fit-content
+}
+
 .small {
   width: 147px;
 }  
@@ -63,6 +67,7 @@
 }
 
 .white {
+  font-family: $gotham-pro-bold;
   background-color: $white;
   color: $black-2;
 
@@ -80,6 +85,7 @@
 }
 
 .grey {
+  font-family: $gotham-pro-bold;
   background-color: $black-1;
   color: $white;
 
@@ -93,5 +99,46 @@
     background-color: #606060;
     color: $white;
     border: 0;
+  }
+}
+
+.outline {
+  font-family: $gotham-pro-bold;
+  background-color: transparent;
+  border: 1px solid $blue;
+  color: $blue;
+
+  &:hover {
+    border: 0;
+    color: $white;
+    background-color: $blue;
+  }
+
+  &:active {
+    background-color: #4B84FD;
+    color: $white;
+    border: 0;
+  }
+}
+
+.textbtn {
+  background-color: transparent;
+  @extend %paragraph;
+  color: $black-1;
+  flex-shrink: 0;
+  height: unset;
+  min-height: unset;
+  min-width: unset;
+  user-select: none;
+  border-radius: unset;
+  padding: unset;
+  border: 0;
+
+  &:hover {
+    color: $blue;
+  }
+
+  &:active {
+    color: #4B84FD;
   }
 }
