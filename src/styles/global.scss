@@ -1,0 +1,32 @@
+@import 'variables';
+
+// Container
+.container {
+    max-width: ($containerWidth + $containerPadding) + px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 $containerSidePadding + px;
+
+    @include desktop-1280 {
+        max-width: 1200px;
+    }
+
+    @include tablet-landscape-960 {
+        padding: 0 32px;
+    }
+
+    @include mobile-480 {
+        max-width: none;
+        padding: 0 24px;
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

@@ -41,6 +41,9 @@
   @include typography(fonts.$gotham-pro-black, 14px, 130%, 400, 14px, 130%, 400);
 }
 
+// font-size: 36px;
+// line-height: 100%;	
+
 %black {
   @include typography-regular(fonts.$gotham-pro-black, 400);
 }
