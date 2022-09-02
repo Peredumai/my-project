@@ -6,12 +6,12 @@ import FAQPage from '../../pages/FAQPage/FAQPage'
 
 function App() {
     return (
-        <Layout>
-            <Routes>
-                <Route path='/' element={<HomePage />} />
-                <Route path='/faq' element={<FAQPage />} />
-            </Routes>
-        </Layout>
+        <Routes>
+            <Route path="/" element={<Layout />}>
+                <Route index element={<HomePage />} />
+                <Route path='faq' element={<FAQPage />} />
+            </Route>
+        </Routes>
     )
 }
 

@@ -2,16 +2,17 @@ import React from 'react';
 import Header from '../Header/Header';
 import clsx from 'clsx'
 import styles from './Layout.module.scss'
+import Footer from '../Footer/Footer';
+import { Outlet } from 'react-router-dom';
 
-type LayoutProps = {
-  children: JSX.Element,
-}
-
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout = () => {
     return (
         <>
             <Header />
-            <div className={clsx(styles.container, styles.layout)}>{children}</div>
+            <main className={clsx(styles.container, styles.layout)}>
+                <Outlet />
+            </main>
+            <Footer />
         </>
     );
 };
