@@ -1,5 +1,9 @@
 @import 'src/styles/main';
 
 .app {
-    @extend %black;
+    background-color: $bg;
+}
+
+.cont {
+    height: 2000px;
 }

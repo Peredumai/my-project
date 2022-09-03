@@ -1,4 +1,5 @@
 @use 'fonts';
+@use 'sass:math';
 
 // Breakpoints
 $breakpoint480: 480;
@@ -11,4 +12,12 @@ $breakpoint1280: 1280;
 // >= desktop
 
 $main-font: fonts.$gotham-pro-regular;
-$base-font-size: 42;
+$base-font-size: 16px;
+
+// Vars
+$headerHeight: 60px;
+$headerHeightMobile: 54px;
+
+$containerWidth: 1200;
+$containerPadding: 80;
+$containerSidePadding: math.div($containerPadding, 2);

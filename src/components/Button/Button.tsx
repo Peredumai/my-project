@@ -4,15 +4,15 @@ import clsx from 'clsx';
 import styles from './Button.module.scss';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  color?: 'blue' | 'white' | 'grey';
-  size?: 'extraSmall' | 'small' | 'medium' | 'large' | 'extraLarge' | 'block';
+  color?: 'blue' | 'white' | 'grey' | 'outline' | 'textbtn';
+  size?: 'extraSmall' | 'small' | 'medium' | 'large' | 'extraLarge' | 'block' | 'none';
   disabled?: boolean | undefined;
 }
 
 export const Button: React.FC<ButtonProps> = ({
   children,
   color = 'blue',
-  size = 'extraSmall',
+  size = 'none',
   disabled = false,
   className: classNameProp,
   ...props
@@ -21,6 +21,8 @@ export const Button: React.FC<ButtonProps> = ({
     blue: styles.blue,
     white: styles.white,
     grey: styles.grey,
+    outline: styles.outline,
+    textbtn: styles.textbtn
   };
   const sizes = {
     extraSmall: styles.extraSmall,
@@ -29,6 +31,7 @@ export const Button: React.FC<ButtonProps> = ({
     large: styles.sizeLarge,
     extraLarge: styles.extraLarge,
     block: styles.sizeBlock,
+    none: styles.none
   };
   const className = clsx(
     styles.btn,
