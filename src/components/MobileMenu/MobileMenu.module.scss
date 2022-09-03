@@ -67,14 +67,7 @@
                 height: 32px;
             }
         }
-        > .header__mobile__lang {
-            justify-content: flex-end;
-            > span {
-                font-size: 17px;
-            }
-        }
-        > .header__mobile__links,
-        .header__mobile__lang {
+        > .header__mobile__links {
             flex: 0 1 40%;
             margin-top: 40px;
         }
@@ -101,27 +94,4 @@
     @include desktop-1280 {
         gap: 4px;
     }
-}
-
-.header__mobile__lang {
-    display: flex;
-    align-items: center;
-    margin-left: 40px;
-    gap: 4px;
-    position: relative;
-    > span {
-        @extend %medium;
-        font-size: 16px;
-        line-height: 150%;
-        color: $black-1;
-    }
-    @include desktop-1280 {
-        margin-left: 20px;
-    }
-}
-
-.langMenu {
-    position: absolute;
-    bottom: 40px;
-    top: unset;
 }

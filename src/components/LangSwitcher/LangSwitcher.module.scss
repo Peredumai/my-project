@@ -1,0 +1,135 @@
+@import 'src/styles/main';
+
+.overlay {
+    display: none;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    z-index: 12;
+    &_active {
+        display: block;
+    }
+}
+
+.footer__lang, .header__lang, .header__mobile__lang {
+    cursor: pointer;
+}
+
+.footer__lang {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 3px;
+    margin-top: 17px;
+    position: relative;
+    > span {
+        @extend %medium;
+        font-size: 17px;
+        line-height: 150%;
+    }
+    @include tablet-portrait-768 {
+        margin-top: 0;
+    }
+}
+
+.header__lang {
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+    gap: 4px;
+    position: relative;
+    > span {
+        @extend %medium;
+        font-size: 16px;
+        line-height: 150%;
+        color: $black-1;
+    }
+    @include desktop-1280 {
+        margin-left: 20px;
+    }
+}
+
+.header__mobile__lang {
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+    gap: 4px;
+    position: relative;
+    flex: 0 1 40%;
+    margin-top: 40px;
+    justify-content: flex-end;
+    > span {
+        @extend %medium;
+        font-size: 17px;
+        line-height: 150%;
+        color: $black-1;
+    }
+    @include desktop-1280 {
+        margin-left: 20px;
+    }
+}
+
+.active {
+    &_lang {
+        transform: rotate(180deg) !important;
+    }
+}
+
+.langMenu {
+    z-index: 12;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background: #ffffff;
+    box-shadow: 0px 20px 48px rgba(177, 177, 177, 0.4);
+    border-radius: 16px;
+    cursor: pointer;
+    > ul {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 205px;
+        padding: 27px 23px;
+        > li {
+            color: $black-2;
+            font-family: $main-font;
+            font-weight: 700;
+            font-size: 17px;
+            line-height: 150%;
+            letter-spacing: 0.01em;
+        }
+    }
+}
+
+.header__langMenu {
+    left: unset;
+    top: 49px;
+    > ul {
+        width: 114px;
+    }
+}
+
+.footer__langMenu {
+    top: -10px;
+    right: 50px;
+    > ul {
+        width: 114px;
+    }
+}
+
+.header__mobile__langMenu {
+    bottom: 40px;
+    top: unset;
+    right: 0;
+    > ul {
+        width: 114px;
+    }
+}
+
+.arrowDown {
+    path {
+        fill: $white;
+    }
+}

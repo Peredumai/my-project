@@ -8,21 +8,7 @@ import MobileMenu from '../MobileMenu/MobileMenu'
 
 const Layout = () => {
     const [menuActive, setMenuActive] = useState(false)
-    const [subscriptionsMenuVisible, setSubscriptionsMenuVisible] = useState(false)
-    const [langMenuVisible, setLangMenuVisible] = useState(false)
 
-    const subscriptionsToggleHandler = () => {
-        setSubscriptionsMenuVisible((p) => !p)
-    }
-
-    const langToggleHandler = () => {
-        setLangMenuVisible((p) => !p)
-    }
-
-    const overlayFunc = () => {
-        setSubscriptionsMenuVisible(false)
-        setLangMenuVisible(false)
-    }
     const [size, setSize] = useState({
         width: 0,
         height: 0,
@@ -48,20 +34,9 @@ const Layout = () => {
         <>
             <Header
                 menuActive={menuActive}
-                langMenuVisible={langMenuVisible}
-                langToggleHandler={langToggleHandler}
-                overlayFunc={overlayFunc}
                 setMenuActive={setMenuActive}
-                subscriptionsToggleHandler={subscriptionsToggleHandler}
-                subscriptionsMenuVisible={subscriptionsMenuVisible}
             />
-            {menuActive && (
-                <MobileMenu
-                    overlayFunc={overlayFunc}
-                    langMenuVisible={langMenuVisible}
-                    langToggleHandler={langToggleHandler}
-                />
-            )}
+            {menuActive && <MobileMenu />}
             {!menuActive && (
                 <div>
                     <main className={clsx(styles.container, styles.layout)}>

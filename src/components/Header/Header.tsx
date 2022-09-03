@@ -12,35 +12,35 @@ import BurgerClose from '../../assets/img/burger-close.svg'
 
 import clsx from 'clsx'
 import { Button } from '../Button'
+import LangSwitcher from '../LangSwitcher/LangSwitcher'
 interface HeaderProps {
     menuActive: boolean
     setMenuActive: React.Dispatch<React.SetStateAction<boolean>>
-    subscriptionsMenuVisible: boolean
-    subscriptionsToggleHandler: () => void
-    langMenuVisible: boolean
-    langToggleHandler: () => void
-    overlayFunc: () => void
 }
 
 const Header: React.FC<HeaderProps> = ({
     menuActive,
     setMenuActive,
-    overlayFunc,
-    subscriptionsMenuVisible,
-    subscriptionsToggleHandler,
-    langMenuVisible,
-    langToggleHandler,
 }) => {
     const menuToggleHandler = () => {
         setMenuActive((p: boolean) => !p)
     }
 
+    const [subscriptionsMenuVisible, setSubscriptionsMenuVisible] = useState(false)
+
+    const subscriptionsToggleHandler = () => {
+        setSubscriptionsMenuVisible((p) => !p)
+    }
+
+    const overlayFunc = () => {
+        setSubscriptionsMenuVisible(false)
+    }
     return (
         <header>
             <div
                 onClick={overlayFunc}
                 className={clsx(styles.overlay, {
-                    [styles.overlay_active]: subscriptionsMenuVisible || langMenuVisible,
+                    [styles.overlay_active]: subscriptionsMenuVisible
                 })}
             />
 
@@ -80,23 +80,7 @@ const Header: React.FC<HeaderProps> = ({
                             <img src={Whatsapp} alt='' />
                             <img src={Telegram} alt='' />
                         </div>
-                        <div onClick={langToggleHandler} className={styles.header__lang}>
-                            <span>EN</span>
-                            <img
-                                src={ArrowDown}
-                                className={clsx({ [styles.active_lang]: langMenuVisible })}
-                                alt=''
-                            />
-                            {langMenuVisible && (
-                                <div className={styles.langMenu}>
-                                    <ul>
-                                        <li>English</li>
-                                        <li>Ukraine</li>
-                                        <li>Russian</li>
-                                    </ul>
-                                </div>
-                            )}
-                        </div>
+                        <LangSwitcher variant='header'/>
                         <Button className={styles.header__login}>Log in</Button>
                     </div>
                     <div

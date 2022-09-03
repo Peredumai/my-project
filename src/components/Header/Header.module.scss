@@ -86,22 +86,22 @@ header {
     gap: 12px;
 }
 
-.header__lang {
-    display: flex;
-    align-items: center;
-    margin-left: 40px;
-    gap: 4px;
-    position: relative;
-    > span {
-        @extend %medium;
-        font-size: 16px;
-        line-height: 150%;
-        color: $black-1;
-    }
-    @include desktop-1280 {
-        margin-left: 20px;
-    }
-}
+// .header__lang {
+//     display: flex;
+//     align-items: center;
+//     margin-left: 40px;
+//     gap: 4px;
+//     position: relative;
+//     > span {
+//         @extend %medium;
+//         font-size: 16px;
+//         line-height: 150%;
+//         color: $black-1;
+//     }
+//     @include desktop-1280 {
+//         margin-left: 20px;
+//     }
+// }
 
 .header__buttons {
     display: flex;
@@ -160,13 +160,14 @@ header {
     bottom: 0;
     top: 0;
     left: 0;
-    z-index: 13;
+    z-index: 14;
+    // background-color: red;
     &_active {
         display: block;
     }
 }
 
-.subscriptionsMenu, .langMenu {
+.subscriptionsMenu {
     z-index: 12;
     display: flex;
     flex-direction: column;
@@ -194,13 +195,13 @@ header {
     }
 }
 
-.langMenu {
-    left: unset;
-    top: 49px;
-    > ul {
-        width: 114px;
-    }
-}
+// .langMenu {
+//     left: unset;
+//     top: 49px;
+//     > ul {
+//         width: 114px;
+//     }
+// }
 
 .active {
     transform: rotate(180deg) translateY(-2px) !important;
