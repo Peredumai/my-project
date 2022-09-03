@@ -13,13 +13,13 @@ import MobileSupport from '../../assets/img/mobile-support.svg'
 
 interface MobileMenuProps {
     langMenuVisible: boolean
-    langToggleHandler: () => void
     overlayFunc: () => void
+    langToggleHandler: () => void
 }
 
-const MobileMenu: React.FC<MobileMenuProps> = ({ langMenuVisible, langToggleHandler, overlayFunc }) => {
+const MobileMenu: React.FC<MobileMenuProps> = ({ overlayFunc, langMenuVisible, langToggleHandler }) => {
     return (
-        <div>
+        <>
             <div
                 onClick={overlayFunc}
                 className={clsx(styles.overlay, {
@@ -80,11 +80,13 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ langMenuVisible, langToggleHand
                             )}
                         </div>
                         <Button className={styles.header__mobile__signup}>Sign up</Button>
-                        <Button className={styles.header__mobile__login} color='outline'>Login</Button>
+                        <Button className={styles.header__mobile__login} color='outline'>
+                            Login
+                        </Button>
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 

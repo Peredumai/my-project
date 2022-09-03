@@ -12,29 +12,27 @@ import BurgerClose from '../../assets/img/burger-close.svg'
 
 import clsx from 'clsx'
 import { Button } from '../Button'
-import MobileMenu from '../MobileMenu/MobileMenu'
+interface HeaderProps {
+    menuActive: boolean
+    setMenuActive: React.Dispatch<React.SetStateAction<boolean>>
+    subscriptionsMenuVisible: boolean
+    subscriptionsToggleHandler: () => void
+    langMenuVisible: boolean
+    langToggleHandler: () => void
+    overlayFunc: () => void
+}
 
-const Header = () => {
-    const [menuActive, setMenuActive] = useState(false)
-
-    const [subscriptionsMenuVisible, setSubscriptionsMenuVisible] = useState(false)
-    const [langMenuVisible, setLangMenuVisible] = useState(false)
-
+const Header: React.FC<HeaderProps> = ({
+    menuActive,
+    setMenuActive,
+    overlayFunc,
+    subscriptionsMenuVisible,
+    subscriptionsToggleHandler,
+    langMenuVisible,
+    langToggleHandler,
+}) => {
     const menuToggleHandler = () => {
-        setMenuActive((p) => !p)
-    }
-
-    const subscriptionsToggleHandler = () => {
-        setSubscriptionsMenuVisible((p) => !p)
-    }
-
-    const langToggleHandler = () => {
-        setLangMenuVisible((p) => !p)
-    }
-
-    const overlayFunc = () => {
-        setSubscriptionsMenuVisible(false)
-        setLangMenuVisible(false)
+        setMenuActive((p: boolean) => !p)
     }
 
     return (
@@ -45,13 +43,6 @@ const Header = () => {
                     [styles.overlay_active]: subscriptionsMenuVisible || langMenuVisible,
                 })}
             />
-            {menuActive && (
-                <MobileMenu
-                    overlayFunc={overlayFunc}
-                    langMenuVisible={langMenuVisible}
-                    langToggleHandler={langToggleHandler}
-                />
-            )}
 
             <div className={styles.container}>
                 <div className={styles.header__content}>
@@ -79,9 +70,7 @@ const Header = () => {
                             )}
                         </li>
                         <li>
-                            <NavLink to='/faq'>
-                                FAQ
-                            </NavLink>
+                            <NavLink to='/faq'>FAQ</NavLink>
                         </li>
                         <li>Support</li>
                         <li>About</li>
