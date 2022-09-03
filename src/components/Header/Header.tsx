@@ -3,7 +3,7 @@ import styles from './Header.module.scss'
 
 import { Link, NavLink } from 'react-router-dom'
 
-import Logo from '../../assets/img/logo.svg'
+import Logo from '../../assets/img/header-logo.svg'
 import ArrowDown from '../../assets/img/arrow-down.svg'
 import Whatsapp from '../../assets/img/whatsapp.svg'
 import Telegram from '../../assets/img/telegram.svg'

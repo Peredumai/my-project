@@ -31,7 +31,6 @@ header {
         font-family: $manrope;
         font-size: $base-font-size;
         color: $black-2;
-        font-style: normal;
         font-weight: 600;
         line-height: 130%;
     }
@@ -44,7 +43,6 @@ header {
 }
 
 .menu {
-    list-style: none;
     padding: 0;
     display: flex;
     gap: 44px;
@@ -86,9 +84,6 @@ header {
     display: flex;
     align-items: center;
     gap: 12px;
-    @include desktop-1280 {
-        gap: 4px;
-    }
 }
 
 .header__lang {
@@ -96,8 +91,8 @@ header {
     align-items: center;
     margin-left: 40px;
     gap: 4px;
+    position: relative;
     > span {
-        position: relative;
         @extend %medium;
         font-size: 16px;
         line-height: 150%;
@@ -185,7 +180,6 @@ header {
     > ul {
         display: flex;
         flex-direction: column;
-        list-style: none;
         gap: 20px;
         width: 205px;
         padding: 27px 23px;
@@ -195,7 +189,6 @@ header {
             font-weight: 700;
             font-size: 17px;
             line-height: 150%;
-            font-style: normal;
             letter-spacing: 0.01em;
         }
     }
@@ -203,7 +196,7 @@ header {
 
 .langMenu {
     left: unset;
-    top: 67px;
+    top: 49px;
     > ul {
         width: 114px;
     }
