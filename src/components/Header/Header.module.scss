@@ -4,6 +4,7 @@ header {
     background-color: $white;
     width: 100%;
     position: fixed;
+    z-index: 16;
 }
 
 .header__content {
@@ -85,23 +86,6 @@ header {
     align-items: center;
     gap: 12px;
 }
-
-// .header__lang {
-//     display: flex;
-//     align-items: center;
-//     margin-left: 40px;
-//     gap: 4px;
-//     position: relative;
-//     > span {
-//         @extend %medium;
-//         font-size: 16px;
-//         line-height: 150%;
-//         color: $black-1;
-//     }
-//     @include desktop-1280 {
-//         margin-left: 20px;
-//     }
-// }
 
 .header__buttons {
     display: flex;

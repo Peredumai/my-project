@@ -68,8 +68,11 @@
             }
         }
         > .header__mobile__links {
-            flex: 0 1 40%;
+            flex: 0 1 90%;
             margin-top: 40px;
+            @include tablet-portrait-768 {
+                flex: 0 1 50%;
+            }
         }
         > .header__mobile__login,
         .header__mobile__signup {

@@ -8,16 +8,6 @@ interface LangSwitcherProps extends React.ButtonHTMLAttributes<HTMLButtonElement
 }
 
 const LangSwitcher: React.FC<LangSwitcherProps> = ({ variant }) => {
-    // const variants = {
-    //     header: styles.blue,
-    //     footer: styles.white,
-    //     headerMobile: styles.grey,
-    // }
-
-    // const className = clsx(
-    //   styles.btn,
-    //   variants[variant],
-    // );
 
     const [langMenuVisible, setLangMenuVisible] = useState(false)
     const langToggleHandler = () => {

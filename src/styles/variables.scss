@@ -2,13 +2,13 @@
 @use 'sass:math';
 
 // Breakpoints
-$breakpoint480: 480;
+$breakpoint480: 479.98;
 // mobile <
-$breakpoint768: 768;
+$breakpoint768: 767.98;
 // >= tablet-portrait <
-$breakpoint960: 960;
+$breakpoint960: 959.98;
 // >= tablet-landscape <
-$breakpoint1280: 1280;
+$breakpoint1280: 1279.98;
 // >= desktop
 
 $main-font: fonts.$gotham-pro-regular;

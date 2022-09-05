@@ -1,0 +1,678 @@
+@import 'src/styles/main';
+
+.homepage {
+    color: $black-2;
+    h1 {
+        @extend %heading-1;
+    }
+    h2 {
+        @extend %heading-2;
+        @include tablet-landscape-960 {
+            font-family: $gotham-pro-bold;
+            font-weight: 700;
+            font-size: 25px;
+            line-height: 140%;
+        }
+    }
+    h3 {
+        @extend %heading-3;
+    }
+    h4 {
+        @extend %heading-4;
+    }
+}
+// hero section
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-top: 60px;
+    @include tablet-portrait-768 {
+        flex-wrap: wrap-reverse;
+    }
+    &__item {
+        flex: 0 1 auto;
+        box-shadow: 0px 4px 24px rgba(213, 216, 221, 0.2);
+        border-radius: 32px;
+        aspect-ratio: 1.184;
+        max-height: 500px;
+        max-width: 592px;
+        width: 100%;
+        height: auto;
+        @include tablet-landscape-960 {
+            min-width: 344px;
+        }
+        @include tablet-portrait-768 {
+            flex: 0 1 100%;
+            height: auto;
+            min-width: unset;
+        }
+        &.left__item {
+            background: $blue;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px;
+            @include desktop-1280 {
+                padding: 0 30px;
+            }
+            @include tablet-landscape-960 {
+                padding: 23px 20px;
+            }
+            @include tablet-portrait-768 {
+                padding: 20px 20px;
+                max-width: unset;
+                max-height: unset;
+            }
+            > h1 {
+                color: $white;
+                @include desktop-1280 {
+                    font-size: 32px;
+                }
+                @include tablet-landscape-960 {
+                    font-size: 28px;
+                    font-weight: 700;
+                    font-size: 28px;
+                    line-height: 140%;
+                    font-family: $gotham-pro-bold;
+                }
+                @include tablet-portrait-768 {
+                    font-size: 30px;
+                }
+                @include mobile-480 {
+                    font-size: 28px;
+                }
+            }
+            > p {
+                @extend %paragraph;
+                margin-top: 24px;
+                color: $white;
+                @include tablet-landscape-960 {
+                    margin-top: 16px;
+                    font-size: 15px; //must be 16 but not contain
+                }
+                @include tablet-portrait-768 {
+                    margin-top: 30px;
+                    font-size: 24px;
+                }
+                @include mobile-480 {
+                    margin-top: 16px;
+                    font-size: 16px;
+                }
+            }
+            > button {
+                height: 54px;
+                margin-top: 40px;
+                @include tablet-landscape-960 {
+                    margin-top: 32px;
+                    height: 48px;
+                }
+                @include tablet-portrait-768 {
+                    margin-top: 50px;
+                    width: 100%;
+                    height: 70px;
+                    font-size: 24px;
+                }
+                @include mobile-480 {
+                    margin-top: 31px;
+                    font-size: 15px;
+                    height: 48px;
+                }
+            }
+        }
+        &.right__item {
+            padding: 114px 60px 113px 60px;
+            background: $white url('../../assets/img/home-hero-netflix-girl.png') center / cover
+                no-repeat;
+            background-size: contain;
+            background-repeat: no-repeat;
+            @include desktop-1280 {
+                padding: 0 30px;
+            }
+            @include tablet-landscape-960 {
+                padding: 23px 20px;
+            }
+            @include tablet-portrait-768 {
+                padding: 20px 20px;
+                max-width: unset;
+                max-height: unset;
+            }
+        }
+    }
+}
+
+// subscription section
+
+.subscription {
+    margin-top: 128px;
+    @include tablet-landscape-960 {
+        margin-top: 100px;
+    }
+    > h2 {
+        text-align: center;
+    }
+    .subscription__cards__wrapper {
+        margin-top: 37px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    &__card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #ffffff;
+        box-shadow: 0px 4px 24px rgba(213, 216, 221, 0.2);
+        border-radius: 32px;
+        gap: 112px;
+        max-height: 342px;
+        width: 100%;
+        height: auto;
+        gap: 16px;
+        @include tablet-portrait-768 {
+            flex-wrap: wrap-reverse;
+            justify-content: center;
+            max-height: unset;
+        }
+    }
+}
+
+.card {
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #ffffff;
+        box-shadow: 0px 4px 24px rgba(213, 216, 221, 0.2);
+        border-radius: 32px;
+        width: 100%;
+    }
+    &__info {
+        flex: 0 1 auto;
+        max-height: 342px;
+        max-width: 592px;
+        width: 100%;
+        height: auto;
+        padding: 0 0 0 60px;
+        @include tablet-landscape-960 {
+            padding: 0 0 0 32px;
+        }
+        @include tablet-portrait-768 {
+            display: flex;
+            flex: 0 1 100%;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 32px 20px;
+        }
+        > h3 {
+            @include tablet-portrait-768 {
+                flex: 0 1 100%;
+                text-align: center;
+            }
+        }
+        > p {
+            @extend %paragraph;
+            max-width: 440px;
+            margin-top: 22px;
+            color: $black-1;
+            @include desktop-1280 {
+                max-width: 370px;
+                margin-top: 12px;
+            }
+            @include tablet-landscape-960 {
+                display: none;
+            }
+            @include tablet-portrait-768 {
+                display: block;
+                margin-top: 16px;
+                max-width: unset;
+            }
+        }
+        > button {
+            margin-top: 38px;
+            height: 54px;
+            @include desktop-1280 {
+                margin-top: 24px;
+            }
+            @include tablet-portrait-768 {
+                flex: 0 1 100%;
+                margin-top: 32px;
+            }
+        }
+    }
+}
+
+.card__logo__netflix,
+.card__logo__spotify,
+.card__logo__youtube {
+    border-radius: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1.69;
+    flex: 0 1 auto;
+    max-height: 342px;
+    max-width: 592px;
+    width: 100%;
+    padding: 0 0 0 60px;
+    height: auto;
+    @include tablet-landscape-960 {
+        padding: 0 0 0 32px;
+    }
+    @include tablet-portrait-768 {
+        max-height: unset;
+        max-width: unset;
+        flex: 0 1 100%;
+    }
+}
+
+.card__logo__netflix {
+    background: #000000 url('../../assets/img/netflix.png') no-repeat;
+    background-position: center;
+    background-size: 388px;
+    @include tablet-landscape-960 {
+        background-size: 227px;
+    }
+    @include tablet-portrait-768 {
+        background-size: 215px;
+    }
+}
+
+.card__logo__youtube {
+    background: #e1dceb url('../../assets/img/youtube.png') no-repeat;
+    background-position: center;
+    background-size: auto;
+    background-size: 279px;
+    @include desktop-1280 {
+        background-size: auto;
+    }
+    @include tablet-landscape-960 {
+        background-size: 193px;
+    }
+    @include tablet-portrait-768 {
+        background-size: 173px;
+    }
+}
+
+.card__logo__spotify {
+    background: #1ed760 url('../../assets/img/spotify.png') no-repeat;
+    background-position: center;
+    background-size: contain;
+    @include desktop-1280 {
+        background-size: 550px;
+    }
+    @include tablet-landscape-960 {
+        background-size: 393px;
+    }
+    @include mobile-480 {
+        background-size: contain;
+    }
+}
+
+// how it works
+.howItWorks {
+    margin-top: 120px;
+    @include tablet-landscape-960 {
+        margin-top: 100px;
+    }
+    > h2 {
+        text-align: center;
+    }
+}
+
+.step__cards__wrapper {
+    margin-top: 37px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    @include tablet-portrait-768 {
+        flex-wrap: wrap;
+    }
+}
+
+.step__card {
+    width: 388px;
+    position: relative;
+    padding: 148px 0 40px 40px;
+    background: #ffffff;
+    box-shadow: 0px 12px 28px rgba(244, 245, 245, 0.2);
+    border-radius: 32px;
+    @include tablet-landscape-960 {
+        padding: 47px 20px 20px 20px;
+    }
+    @include tablet-portrait-768 {
+        padding: 47px 30px 30px 30px;
+        flex: 0 1 100%;
+    }
+    @include mobile-480 {
+        padding: 47px 20px 20px 20px;
+    }
+    > h4 {
+        font-family: $gotham-pro-bold;
+        font-weight: 700;
+        font-size: 19px;
+        line-height: 140%;
+    }
+    > p {
+        margin-top: 26px;
+        @extend %paragraph-blog;
+        max-width: 227px;
+        @include tablet-landscape-960 {
+            margin-top: 39px;
+            color: $black-1;
+            font-size: 16px; // must be 17, but it not contain
+            font-weight: 400;
+            line-height: 150%;
+            max-width: unset;
+        }
+        @include tablet-portrait-768 {
+            max-width: 280px;
+            > br {
+                display: none;
+            }
+        }
+    }
+
+    > svg {
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        width: 173px;
+        height: 173px;
+        @include tablet-landscape-960 {
+            width: 80px;
+            height: 80px;
+            top: 20px;
+            right: 20px;
+        }
+    }
+}
+
+.invite__thumbnail {
+    width: 100%;
+    padding: 40px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $blue;
+    box-shadow: 0px 4px 24px rgba(213, 216, 221, 0.2);
+    border-radius: 32px;
+    margin-top: 20px;
+    gap: 87px;
+    @include desktop-1280 {
+        gap: 60px;
+    }
+    @include tablet-landscape-960 {
+        gap: 30px;
+        padding: 32px;
+    }
+    @include tablet-portrait-768 {
+        flex-wrap: wrap;
+        margin-top: 16px;
+        padding: 32px 20px 20px 20px;
+        gap: 32px;
+    }
+    @include mobile-480 {
+    }
+}
+
+.invite__info {
+    @include tablet-portrait-768 {
+        flex: 0 1 100%;
+    }
+    > h3 {
+        color: $white;
+        @include tablet-landscape-960 {
+            font-size: 22px;
+        }
+    }
+    > p {
+        color: $white;
+        margin-top: 24px;
+        @extend %paragraph;
+        max-width: 508px;
+        @include tablet-landscape-960 {
+            margin-top: 16px;
+        }
+        @include tablet-portrait-768 {
+            max-width: unset;
+        }
+    }
+}
+
+.invite__link {
+    max-width: 445px;
+    width: 100%;
+    height: 123px;
+    background: #f1f4f8;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @include tablet-landscape-960 {
+        padding: 20px 24px;
+    }
+    @include tablet-portrait-768 {
+        flex: 0 1 100%;
+        max-width: unset;
+        padding: 28px 33px;
+    }
+    > span {
+        font-family: $main-font;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 140%;
+        @include tablet-landscape-960 {
+            font-size: 18px;
+        }
+        // color: $black-2;
+    }
+}
+
+.copy__link {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    gap: 8px;
+    @include tablet-landscape-960 {
+        gap: 21px;
+        margin-top: 12px;
+    }
+    @include tablet-portrait-768 {
+        gap: 15.58px;
+    }
+    > span {
+        color: $blue;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 150%;
+        text-decoration-line: underline;
+        text-transform: uppercase;
+        font-family: $gotham-pro-medium;
+        @include tablet-landscape-960 {
+            font-size: 18px;
+        }
+        @include tablet-portrait-768 {
+            font-size: 13.8125px;
+        }
+    }
+    > svg {
+        @include tablet-landscape-960 {
+            width: 24px;
+            height: 24px;
+        }
+        @include tablet-portrait-768 {
+            width: 18.42px;
+            height: 18.42px;
+        }
+    }
+}
+
+// about us
+
+.aboutUs {
+    margin-top: 120px;
+    @include tablet-landscape-960 {
+        margin-top: 100px;
+    }
+    > h2 {
+        @extend %heading-2;
+        text-align: center;
+        @include tablet-landscape-960 {
+            font-size: 25px;
+        }
+    }
+    .aboutUs__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-top: 37px;
+        @include tablet-landscape-960 {
+            margin-top: 32px;
+        }
+        @include tablet-portrait-768 {
+            flex-wrap: wrap-reverse;
+            margin-top: 28px;
+        }
+    }
+
+    .aboutUs__item {
+        flex: 0 1 auto;
+        max-width: 592px;
+        max-height: 535px;
+        min-height: 412px;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        @include tablet-landscape-960 {
+            aspect-ratio: 0.83;
+        }
+        @include tablet-portrait-768 {
+            flex: 0 1 100%;
+            max-width: unset;
+            max-height: unset;
+        }
+    }
+
+    .left__item {
+        display: flex;
+        flex-direction: column;
+        background: $white;
+        padding: 60px;
+        box-shadow: 0px 4px 24px rgba(213, 216, 221, 0.2);
+        border-radius: 32px;
+        @include desktop-1280 {
+            justify-content: space-around;
+            // justify-content: center;
+
+            padding: 20px;
+            > svg {
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        @include tablet-landscape-960 {
+            > svg {
+                width: 70px;
+                height: 70px;
+            }
+        }
+        @include tablet-portrait-768 {
+            //change
+            height: fit-content;
+            padding: 40px;
+            aspect-ratio: unset;
+            // > svg {
+            //     width: 110px;
+            //     height: 110px;
+            // }
+        }
+        @include mobile-480 {
+            padding: 20px;
+            max-height: unset;
+            > svg {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        .title__paragraph {
+            @extend %paragraph-blog;
+            margin-top: 32px;
+            line-height: 150%;
+            @include tablet-landscape-960 {
+                font-family: $main-font;
+                font-weight: 400;
+                font-size: 17px;
+                margin-top: 20px;
+
+            }
+            @include tablet-portrait-768 {
+                font-size: 20px;
+            }
+            @include mobile-480 {
+                font-size: 17px;
+            }
+        }
+
+        .subtitle__paragraph {
+            @extend %paragraph-blog;
+            margin-top: 32px;
+            line-height: 150%;
+            @include tablet-landscape-960 {
+                font-family: $main-font;
+                font-weight: 400;
+                font-size: 17px;
+                margin-top: 16px;
+            }
+            @include tablet-portrait-768 {
+                font-size: 20px;
+            }
+            @include mobile-480 {
+                font-size: 17px;
+            }
+        }
+
+        .phrase__paragraph {
+            @extend %paragraph-blog;
+            margin-top: 32px;
+            line-height: 150%;
+            font-family: $gotham-pro-bold;
+            @include tablet-landscape-960 {
+                font-size: 17px;
+                margin-top: 16px;
+            }
+            @include tablet-portrait-768 {
+                font-size: 20px;
+            }
+            @include mobile-480 {
+                font-size: 17px;
+            }
+        }
+
+       
+        .title__paragraph,
+        .subtitle__paragraph,
+        .phrase__paragraph {
+            @include mobile-480 {
+                font-size: 17px;
+            }
+        }
+    }
+
+    .right__item {
+        background: url('../../assets/img/logo-girl.png') center / cover no-repeat;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: $white;
+        border-radius: 32px;
+        padding: 60px;
+        @include desktop-1280 {
+            padding: 20px;
+        }
+    }
+}

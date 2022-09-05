@@ -13,10 +13,6 @@
     }
 }
 
-.footer__lang, .header__lang, .header__mobile__lang {
-    cursor: pointer;
-}
-
 .footer__lang {
     display: flex;
     align-items: center;
@@ -57,7 +53,7 @@
     margin-left: 40px;
     gap: 4px;
     position: relative;
-    flex: 0 1 40%;
+    flex: 0 1 40px;
     margin-top: 40px;
     justify-content: flex-end;
     > span {
