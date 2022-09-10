@@ -10,6 +10,7 @@ import { ReactComponent as Copy } from '../../assets/img/copy.svg'
 import { ReactComponent as Logo } from '../../assets/img/header-logo.svg'
 
 import clsx from 'clsx'
+import Question from '../../components/Question/Question'
 
 const HomePage = () => {
     return (
@@ -40,7 +41,7 @@ const HomePage = () => {
                             </p>
                             <Button size='small'>Learn more</Button>
                         </div>
-                        <div className={styles.card__logo__netflix}/>
+                        <div className={styles.card__logo__netflix} />
                     </div>
                     <div className={styles.subscription__card}>
                         <div className={styles.card__info}>
@@ -51,7 +52,7 @@ const HomePage = () => {
                             </p>
                             <Button size='small'>Learn more</Button>
                         </div>
-                        <div className={styles.card__logo__spotify}/>
+                        <div className={styles.card__logo__spotify} />
                     </div>
                     <div className={styles.subscription__card}>
                         <div className={styles.card__info}>
@@ -62,7 +63,7 @@ const HomePage = () => {
                             </p>
                             <Button size='small'>Learn more</Button>
                         </div>
-                        <div className={styles.card__logo__youtube}/>
+                        <div className={styles.card__logo__youtube} />
                     </div>
                 </div>
             </div>
@@ -109,15 +110,59 @@ const HomePage = () => {
                 <div className={styles.aboutUs__wrapper}>
                     <div className={clsx(styles.aboutUs__item, styles.left__item)}>
                         <Logo height={130} width={130} />
-                        <p className={styles.title__paragraph}>We offer you a subscription to various media services at the best price.</p>
-                        <p className={styles.subtitle__paragraph}>We have partnered with several companies to help you find the best prices for your media subscriptions and provide you with the best prices for the Premium subscriptions you want.</p>
-                        <p className={styles.phrase__paragraph}>It&apos;s simple, fast and economical.</p>
+                        <p className={styles.title__paragraph}>
+                            We offer you a subscription to various media services at the best price.
+                        </p>
+                        <p className={styles.subtitle__paragraph}>
+                            We have partnered with several companies to help you find the best
+                            prices for your media subscriptions and provide you with the best prices
+                            for the Premium subscriptions you want.
+                        </p>
+                        <p className={styles.phrase__paragraph}>
+                            It&apos;s simple, fast and economical.
+                        </p>
                     </div>
                     <div className={clsx(styles.aboutUs__item, styles.right__item)} />
                 </div>
             </div>
+            <div className={styles.faq__section}>
+                <h2>FAQ</h2>
+                <div className={styles.accordion__wrapper}>
+                    <Question
+                        title='The set time has passed, but the invoice has not yet arrived, what should I do?'
+                        info='Request for an additional subscription that was not found here'
+                    />
+                    <Question
+                        title='Can I change my Netflix account email and password after purchase?'
+                        info='Starting today up to 50% for NETFLIX, YOUTUBE, SPOTIFY subscriptions with a secure payment from PAYPAL'
+                    />
+                    <Question
+                        title='Can I add a phone number for password recovery?'
+                        info='The constant contributes to the task of the same and thus the intended features and the set relation to the check and set also.'
+                    />
+                    <Question
+                        title='How soon will I receive the account information I ordered?How soon will I receive the account information I ordered?'
+                        info='You have always wanted to get the same product at a special price for you, without haggling - and it is yours.'
+                    />
+                    <Question
+                        title='How to pay?'
+                        info='Payment options we currently have: PayPal, Bitcoin.'
+                    />
+                </div>
+                <Button color='grey' size='large'>
+                    Support
+                </Button>
+                <div className={styles.request__thumbnail}>
+                    <div className={styles.request__text}>
+                        <h4>Request for an additional subscription that was not found here</h4>
+                        <p>Disney, Amazon Prime, Microsoft Office, Microsoft Windows</p>
+                    </div>
+                    <Button className={styles.request__button} color='white' size='large'>
+                        Request
+                    </Button>
+                </div>
+            </div>
         </div>
-
     )
 }
 
