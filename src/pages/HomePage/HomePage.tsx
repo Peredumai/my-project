@@ -5,12 +5,13 @@ import styles from './HomePage.module.scss'
 import { ReactComponent as HowItWorksStep1 } from '../../assets/img/hiw-step1.svg'
 import { ReactComponent as HowItWorksStep2 } from '../../assets/img/hiw-step2.svg'
 import { ReactComponent as HowItWorksStep3 } from '../../assets/img/hiw-step3.svg'
-import { ReactComponent as Copy } from '../../assets/img/copy.svg'
 
 import { ReactComponent as Logo } from '../../assets/img/header-logo.svg'
 
 import clsx from 'clsx'
-import Question from '../../components/Question/Question'
+
+import InviteThumbnail from '../../components/InviteThumbnail/InviteThumbnail'
+import FAQSection from '../../components/FAQSection/FAQSection'
 
 const HomePage = () => {
     return (
@@ -88,22 +89,7 @@ const HomePage = () => {
                         <HowItWorksStep3 />
                     </div>
                 </div>
-                <div className={styles.invite__thumbnail}>
-                    <div className={styles.invite__info}>
-                        <h3>Invite friends</h3>
-                        <p>
-                            Starting today up to 50% for NETFLIX, YOUTUBE, SPOTIFY subscriptions
-                            with a secure payment from PAYPAL
-                        </p>
-                    </div>
-                    <div className={styles.invite__link}>
-                        <span>Click on the link</span>
-                        <div className={styles.copy__link}>
-                            <span>Discounts On Services</span>
-                            <Copy />
-                        </div>
-                    </div>
-                </div>
+                <InviteThumbnail />
             </div>
             <div className={styles.aboutUs}>
                 <h2>About us</h2>
@@ -125,42 +111,15 @@ const HomePage = () => {
                     <div className={clsx(styles.aboutUs__item, styles.right__item)} />
                 </div>
             </div>
-            <div className={styles.faq__section}>
-                <h2>FAQ</h2>
-                <div className={styles.accordion__wrapper}>
-                    <Question
-                        title='The set time has passed, but the invoice has not yet arrived, what should I do?'
-                        info='Request for an additional subscription that was not found here'
-                    />
-                    <Question
-                        title='Can I change my Netflix account email and password after purchase?'
-                        info='Starting today up to 50% for NETFLIX, YOUTUBE, SPOTIFY subscriptions with a secure payment from PAYPAL'
-                    />
-                    <Question
-                        title='Can I add a phone number for password recovery?'
-                        info='The constant contributes to the task of the same and thus the intended features and the set relation to the check and set also.'
-                    />
-                    <Question
-                        title='How soon will I receive the account information I ordered?How soon will I receive the account information I ordered?'
-                        info='You have always wanted to get the same product at a special price for you, without haggling - and it is yours.'
-                    />
-                    <Question
-                        title='How to pay?'
-                        info='Payment options we currently have: PayPal, Bitcoin.'
-                    />
+            <FAQSection type='Standart' />
+            <div className={styles.request__thumbnail}>
+                <div className={styles.request__text}>
+                    <h4>Request for an additional subscription that was not found here</h4>
+                    <p>Disney, Amazon Prime, Microsoft Office, Microsoft Windows</p>
                 </div>
-                <Button color='grey' size='large'>
-                    Support
+                <Button className={styles.request__button} color='white' size='large'>
+                    Request
                 </Button>
-                <div className={styles.request__thumbnail}>
-                    <div className={styles.request__text}>
-                        <h4>Request for an additional subscription that was not found here</h4>
-                        <p>Disney, Amazon Prime, Microsoft Office, Microsoft Windows</p>
-                    </div>
-                    <Button className={styles.request__button} color='white' size='large'>
-                        Request
-                    </Button>
-                </div>
             </div>
         </div>
     )

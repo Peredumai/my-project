@@ -1,0 +1,51 @@
+@import 'src/styles/main';
+
+.faq__section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 120px;
+    @include desktop-1280 {
+        margin-top: 100px;
+    }
+    > .standartHeading2 {
+        @extend %heading-2;
+        font-family: $gotham-pro-bold;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 130%;
+        text-align: center;
+        @include tablet-landscape-960 {
+            font-family: $gotham-pro-bold;
+            font-weight: 700;
+            font-size: 25px;
+            line-height: 140%;
+        }
+    }
+
+    > .extendedHeading2 {
+        font-family: $main-font;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 140%;
+        text-align: center;
+        color: $black-2;
+        @include tablet-landscape-960 {
+            font-size: 28px;
+        }
+    }
+    > button {
+        align-self: center;
+        margin-top: 40px;
+        height: 54px;
+        @include tablet-landscape-960 {
+            height: 48px;
+        }
+    }
+}
+
+.accordion__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 40px;
+}

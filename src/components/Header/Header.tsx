@@ -13,15 +13,13 @@ import BurgerClose from '../../assets/img/burger-close.svg'
 import clsx from 'clsx'
 import { Button } from '../Button'
 import LangSwitcher from '../LangSwitcher/LangSwitcher'
+import Netflix from './../../pages/Netflix/Netflix';
 interface HeaderProps {
     menuActive: boolean
     setMenuActive: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const Header: React.FC<HeaderProps> = ({
-    menuActive,
-    setMenuActive,
-}) => {
+const Header: React.FC<HeaderProps> = ({ menuActive, setMenuActive }) => {
     const menuToggleHandler = () => {
         setMenuActive((p: boolean) => !p)
     }
@@ -40,7 +38,7 @@ const Header: React.FC<HeaderProps> = ({
             <div
                 onClick={overlayFunc}
                 className={clsx(styles.overlay, {
-                    [styles.overlay_active]: subscriptionsMenuVisible
+                    [styles.overlay_active]: subscriptionsMenuVisible,
                 })}
             />
 
@@ -62,7 +60,9 @@ const Header: React.FC<HeaderProps> = ({
                             {subscriptionsMenuVisible && (
                                 <div className={styles.subscriptionsMenu}>
                                     <ul>
-                                        <li>Netflix</li>
+                                        <li onClick={() => console.log('1')}>
+                                            <NavLink to='/netflix'>Netflix</NavLink>
+                                        </li>
                                         <li>YouTube Premium</li>
                                         <li>Spotify</li>
                                     </ul>
@@ -80,7 +80,7 @@ const Header: React.FC<HeaderProps> = ({
                             <img src={Whatsapp} alt='' />
                             <img src={Telegram} alt='' />
                         </div>
-                        <LangSwitcher variant='header'/>
+                        <LangSwitcher variant='header' />
                         <Button className={styles.header__login}>Log in</Button>
                     </div>
                     <div

@@ -1,0 +1,122 @@
+@import 'src/styles/main';
+
+.invite__thumbnail {
+    width: 100%;
+    padding: 40px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $blue;
+    box-shadow: 0px 4px 24px rgba(213, 216, 221, 0.2);
+    border-radius: 32px;
+    margin-top: 20px;
+    gap: 87px;
+    @include desktop-1280 {
+        gap: 60px;
+    }
+    @include tablet-landscape-960 {
+        gap: 30px;
+        padding: 32px;
+    }
+    @include tablet-portrait-768 {
+        flex-wrap: wrap;
+        margin-top: 16px;
+        padding: 32px 20px 20px 20px;
+        gap: 32px;
+    }
+    @include mobile-480 {
+    }
+}
+
+.invite__info {
+    @include tablet-portrait-768 {
+        flex: 0 1 100%;
+    }
+    > h3 {
+        color: $white;
+        @include tablet-landscape-960 {
+            font-size: 22px;
+        }
+    }
+    > p {
+        color: $white;
+        margin-top: 24px;
+        @extend %paragraph;
+        max-width: 508px;
+        @include tablet-landscape-960 {
+            margin-top: 16px;
+        }
+        @include tablet-portrait-768 {
+            max-width: unset;
+        }
+    }
+}
+
+.invite__link {
+    max-width: 445px;
+    width: 100%;
+    height: 123px;
+    background: #f1f4f8;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @include tablet-landscape-960 {
+        padding: 20px 24px;
+    }
+    @include tablet-portrait-768 {
+        flex: 0 1 100%;
+        max-width: unset;
+        padding: 28px 33px;
+    }
+    > span {
+        font-family: $main-font;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 140%;
+        @include tablet-landscape-960 {
+            font-size: 18px;
+        }
+        // color: $black-2;
+    }
+}
+
+.copy__link {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    gap: 8px;
+    @include tablet-landscape-960 {
+        gap: 21px;
+        margin-top: 12px;
+    }
+    @include tablet-portrait-768 {
+        gap: 15.58px;
+    }
+    > span {
+        color: $blue;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 150%;
+        text-decoration-line: underline;
+        text-transform: uppercase;
+        font-family: $gotham-pro-medium;
+        @include tablet-landscape-960 {
+            font-size: 18px;
+        }
+        @include tablet-portrait-768 {
+            font-size: 13.8125px;
+        }
+    }
+    > svg {
+        @include tablet-landscape-960 {
+            width: 24px;
+            height: 24px;
+        }
+        @include tablet-portrait-768 {
+            width: 18.42px;
+            height: 18.42px;
+        }
+    }
+}
